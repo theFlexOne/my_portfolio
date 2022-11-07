@@ -1,6 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "../../pages/Home/Home";
+import Projects from "../../pages/Projects/Projects";
 import "./main.css";
+import About from "../../pages/About/About";
+import Contact from "../../pages/Contact/Contact";
 
 const Main = () => {
   return (
@@ -9,9 +12,9 @@ const Main = () => {
         <Route path="/">
           <Route index element={<Navigate to="/home" />} />
           <Route path="home" element={<Home />} />
-          {/* <Route path="home" element={<Projects />} /> */}
-          {/* <Route path="home" element={<About />} /> */}
-          {/* <Route path="home" element={<Contact />} /> */}
+          <Route path="projects" element={<Projects />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </main>
