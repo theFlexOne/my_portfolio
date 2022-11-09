@@ -19,28 +19,28 @@ const Contact = () => {
       return setEmailError(`Please enter a valid email`);
 
     setIsSending(true);
-    setTimeout(() => {
-      setIsSent(true);
-      setIsSending(false);
-    }, 2000);
-    // emailjs
-    //   .sendForm(
-    //     "service_3dtgiwq",
-    //     "template_wplgkpe",
-    //     form.current,
-    //     "KT1puzfg99h2ITp2U"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //       setIsSent(true);
-    //       setIsSending(false);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //       setIsSending(false);
-    //     }
-    //   );
+    // setTimeout(() => {
+    //   setIsSent(true);
+    //   setIsSending(false);
+    // }, 2000);
+    emailjs
+      .sendForm(
+        "service_3dtgiwq",
+        "template_wplgkpe",
+        form.current,
+        "KT1puzfg99h2ITp2U"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setIsSent(true);
+          setIsSending(false);
+        },
+        (error) => {
+          console.log(error.text);
+          setIsSending(false);
+        }
+      );
   };
 
   const handleFormChange = () => {
