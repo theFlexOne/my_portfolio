@@ -31,3 +31,52 @@
 .contact input {
   padding: 0.1rem 0.25rem;
 }
+
+.contact button {
+  border: 2px solid var(--clr-primary);
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-transform: inherit;
+  font-weight: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.contact button.send:hover,
+.contact button.sent {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+}
+
+.contact button.sent {
+  cursor: default;
+  pointer-events: none;
+}
+
+.contact button.sending {
+  animation: sending 1s infinite;
+}
+
+.contact .error {
+  color: red;
+  font-size: 0.75rem;
+}
+
+@keyframes sending {
+  0% {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg);
+  }
+  50% {
+    background-color: var(--clr-bg);
+    color: var(--clr-primary);
+  }
+  100% {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg);
+  }
+}
