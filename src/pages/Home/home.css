@@ -37,7 +37,6 @@
   font-weight: 500;
   letter-spacing: clamp(2px, calc(var(--fnt-sz) * 0.08), 10px);
   font-size: clamp(3rem, var(--fnt-sz), 4.5rem);
-  line-height: 110%;
 }
 
 .home .last-name,
