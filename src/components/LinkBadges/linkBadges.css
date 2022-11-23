@@ -1,0 +1,13 @@
+.link-badges {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5em;
+}
+
+.link-badges > * {
+  height: 30px;
+  width: 30px;
+  fill: none;
+}

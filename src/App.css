@@ -1,5 +1,7 @@
 :root {
   --clr-bg: #313136;
+  --clr-bg-light: hsl(240, 5%, 30%);
+  --clr-bg-dark: hsl(240, 5%, 10%);
   --clr-primary: #99e4ff;
   --clr-secondary: #ffffff;
   --font-1: "Inter", sans-serif;
@@ -8,7 +10,7 @@
 
 .App {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--clr-bg);
   color: var(--clr-primary);
   font-family: var(--font-2);

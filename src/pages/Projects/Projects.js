@@ -1,12 +1,12 @@
+import { useOutletContext } from "react-router-dom";
 import "./projects.css";
-import posPizzaTn from "../../assets/pos-pizza_thumbnail.jpg";
-import yahtzeeTn from "../../assets/Yahtzee_thumbnail.jpg";
-import prenticeStreetBarbersTn from "../../assets/prentice-street-barbers_thumbnail.jpg";
-import weatherAppTn from "../../assets/weather-app_thumbnail.jpg";
 
-const Projects = () => {
+const Projects = ({ images }) => {
+  const { yahtzeeTn, posPizzaTn, prenticeStreetBarbersTn, weatherAppTn } =
+    images;
+
   return (
-    <div className="projects">
+    <section className="projects">
       <ProjectCard
         title="Yahtzee"
         details={`
@@ -15,6 +15,7 @@ const Projects = () => {
       `}
         src={yahtzeeTn}
         alt="Yahtzee thumbnail"
+        selected
       />
       <ProjectCard
         title="POS-Pizza"
@@ -38,21 +39,21 @@ const Projects = () => {
         src={prenticeStreetBarbersTn}
         alt="Prentice Street Barbers thumbnail"
       />
-    </div>
+    </section>
   );
 };
 
-const ProjectCard = ({ details, title, ...otherProps }) => {
+const ProjectCard = ({ details, title, selected, link, ...other }) => {
   return (
-    <div className="project-card">
+    <article className={`project-card${selected ? " selected" : ""}`} onClick>
       <div className="image">
-        <img {...otherProps} alt="project card" width="400" />
+        <img {...other} alt="project card" width="400" />
       </div>
       <div className="info">
         <p className="title">{title}</p>
         <p className="details">{details}</p>
       </div>
-    </div>
+    </article>
   );
 };
 

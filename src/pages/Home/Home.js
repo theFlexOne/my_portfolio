@@ -5,9 +5,11 @@ const Home = () => {
   return (
     <section className="home">
       <div className="panel text">
-        <h1 className="name">
-          eric <span>hafvenstein</span>
-        </h1>
+        <div className="name">
+          <p className="first-name">eric</p>
+          <p className="last-name">hafvenstein</p>
+        </div>
+
         <div className="description">
           <p>full stack</p>
           <p>web developer</p>
@@ -15,9 +17,9 @@ const Home = () => {
       </div>
       <div className="panel image">
         <img
+          className="self-image"
           src={profileImg}
           alt="Eric Hafvenstein profile black and white"
-          height="400"
         />
       </div>
     </section>

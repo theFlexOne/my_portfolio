@@ -7,6 +7,11 @@
   letter-spacing: 1.5px;
 }
 
+.header .name {
+  cursor: pointer;
+  user-select: none;
+}
+
 .header nav {
   margin-left: auto;
   display: flex;
@@ -32,10 +37,4 @@
   top: 110%;
   transform: translateX(-50%);
   font-size: 1.25rem;
-}
-
-/* dev styles */
-
-.header {
-  /* border-bottom: 1px dashed lime; */
 }

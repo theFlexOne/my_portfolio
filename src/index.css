@@ -10,8 +10,8 @@
 
 body {
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  /* overflow: hidden; */
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.2rem;

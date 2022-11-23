@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import "./header.css";
 
-const Header = () => {
+const Header = ({ changeThemeColor }) => {
   return (
     <div className="header">
-      <p className="name">
+      <p className="name" onClick={changeThemeColor}>
         eric hafvenstein{/* click to change theme color feature */}
       </p>
       <nav>

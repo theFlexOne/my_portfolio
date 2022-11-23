@@ -1,8 +1,8 @@
 .projects {
-  height: 100%;
+  min-height: 100%;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 40% 40%;
   gap: 1rem;
   place-content: center;
   padding: 1rem;
@@ -14,12 +14,14 @@
 }
 
 .project-card {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--clr-primary);
-  border-radius: 10px;
+  border-radius: 5px;
+  background-color: var(--clr-bg-light);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 2 2 2 2 var(--clr-bg-dark);
 }
 
 .project-card .image {

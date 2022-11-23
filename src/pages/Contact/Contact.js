@@ -2,7 +2,7 @@ import "./contact.css";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 
-const emailValidationRegex = /.+@.+\..+/;
+const EMAIL_VALIDATION_REGEX = /.+@.+\..+/;
 
 const Contact = () => {
   const [isSent, setIsSent] = useState(false);
@@ -12,17 +12,14 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log("form.current", form.current);
     if (isSent) return;
 
-    if (form.current.elements.email.value.match(emailValidationRegex) === null)
+    if (
+      form.current.elements.email.value.match(EMAIL_VALIDATION_REGEX) === null
+    )
       return setEmailError(`Please enter a valid email`);
 
     setIsSending(true);
-    // setTimeout(() => {
-    //   setIsSent(true);
-    //   setIsSending(false);
-    // }, 2000);
     emailjs
       .sendForm(
         "service_3dtgiwq",
@@ -60,26 +57,27 @@ const Contact = () => {
   })();
 
   return (
-    <div className="contact">
+    <div className="contact-page">
       <div className="form-container">
+        <h2>Send me an email!</h2>
         <form ref={form} onSubmit={sendEmail} onChange={handleFormChange}>
           <div className="input-group">
             <label htmlFor="nameInput">
-              Name
+              <p>Name</p>
               <input id="nameInput" type="text" name="name" />
             </label>
             <label htmlFor="emailInput">
-              Email
+              <p>Email</p>
               <input id="emailInput" type="email" name="email" />
               {emailError && <p className="error">{emailError}</p>}
             </label>
           </div>
           <label htmlFor="subjectInput">
-            Subject
+            <p>Subject</p>
             <input id="subjectInput" type="text" name="subject" />
           </label>
           <label htmlFor="messageInput">
-            Message
+            <p>Message</p>
             <textarea
               id="messageInput"
               cols="30"
