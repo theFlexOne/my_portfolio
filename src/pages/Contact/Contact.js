@@ -50,65 +50,65 @@ const Contact = () => {
     return "Send";
   })();
 
+  const TextField = ({
+    id,
+    label,
+    className = "",
+    children,
+    type = "text",
+    ...other
+  }) => {
+    return type === "textArea" ? (
+      <textarea
+        className={"resize-none text-black " + className}
+        id={id}
+        cols="20"
+        rows="10"
+        {...other}
+      />
+    ) : (
+      <label className={"flex gap-2 " + className} htmlFor={id}>
+        <p>{label}</p>
+        <input
+          className="text-black flex-1"
+          id={id}
+          type="text"
+          name="name"
+          {...other}
+        />
+      </label>
+    );
+  };
+
   return (
-    <main className="flex-1 flex flex-col items-center items-center h-full gap-8">
+    <main className="flex-1 flex flex-col items-center h-full gap-8">
       <h1 className="text-5xl px-6 border-b-2 border-gray-200 border-opacity-30 pb-2 tracking-wide">
         Contact
       </h1>
       <div className="p-5 border border-black/50 rounded-md bg-gray-500 bg-opacity-70">
-        <h2 className="text-center text-3xl">Send me an email!</h2>
+        <h2 className="text-center text-2xl mb-4">Send me an email!</h2>
         <form
-          className="flex flex-col gap-2"
+          className="flex flex-col gap-4"
           ref={form}
           onSubmit={sendEmail}
           onChange={handleFormChange}
         >
-          <div className="flex gap-12">
-            <label className="flex flex-col flex- gap-2" htmlFor="nameInput">
-              <p>Name</p>
-              <input
-                className="text-black"
-                id="nameInput"
-                type="text"
-                name="name"
-              />
-            </label>
-            <label className="flex flex-col gap-2" htmlFor="emailInput">
-              <p>Email</p>
-              <input
-                className="text-black"
-                id="emailInput"
-                type="email"
-                name="email"
-              />
+          <div className="flex gap-8">
+            <TextField id="nameInput" label="Name:" />
+            <TextField id="emailInput" label="Email:">
               {emailError && <p className="error">{emailError}</p>}
-            </label>
+            </TextField>
           </div>
-          <label className="flex flex-col gap-2" htmlFor="subjectInput">
-            <p>Subject</p>
-            <input
-              className="text-black"
-              id="subjectInput"
-              type="text"
-              name="subject"
-            />
-          </label>
-          <label
-            className="flex flex-col gap-2 max-h-60"
-            htmlFor="messageInput"
-          >
-            <p>Message</p>
-            <textarea
-              className="resize-none text-black"
-              id="messageInput"
-              cols="20"
-              rows="10"
-              name="message"
-            ></textarea>
-          </label>
+          <TextField id="subjectInput" label="Subject:" />
+          <TextField
+            type="textArea"
+            className="h-60"
+            id="messageInput"
+            label="Message:"
+          />{" "}
           <button
             type="submit"
-            className="border-2 border-primary-500 max-w-max px-14 py-1 self-end mt-4 uppercase font-bold hover:bg-primary-300 hover:text-gray-800"
+            className="border-2 border-primary-500 max-w-max px-14 py-1 self-end uppercase font-bold hover:bg-primary-300 hover:text-gray-800"
           >
             {buttonText}
           </button>
