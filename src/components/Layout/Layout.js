@@ -64,24 +64,6 @@ const NextButton = () => {
 };
 
 const Layout = ({ children }) => {
-  // const path = useLocation().pathname.slice(1);
-  // const navigate = useNavigate();
-  // const [themeClrIdx, setThemeClrIdx] = useState(0);
-
-  // const handleNextPageClick = () => {
-  //   const curIdx = pagePaths.indexOf(path);
-  //   const lastIdx = pagePaths.length - 1;
-  //   const nextIdx = curIdx === lastIdx ? 0 : curIdx + 1;
-  //   navigate(pagePaths[nextIdx]);
-  // };
-
-  // const handlePrevPageClick = () => {
-  //   const curIdx = pagePaths.indexOf(path);
-  //   const lastIdx = pagePaths.length - 1;
-  //   const prevIdx = curIdx === 0 ? lastIdx : curIdx - 1;
-  //   navigate(pagePaths[prevIdx]);
-  // };
-
   return (
     <>
       <LinkBadges />

@@ -44,31 +44,36 @@ const Projects = ({ images }) => {
 
   return (
     activeProject && (
-      <main className="flex flex-1 px-12 py-8 justify-center gap-8">
-        <div className="flex flex-col gap-2 basis-5/6 py-6 px-16 border border-black/25 shadow items-center bg-gray-800 rounded-md">
-          <h1 className="text-center text-5xl tracking-wider mb-2">
-            {activeProject.title}
-          </h1>
-          <img
-            src={activeProject.img}
-            alt={activeProject.img}
-            className="border border-black/25 rounded-lg shadow"
-          />
-          <p className="text-justify my-auto text-base leading-loose">
-            {activeProject.description}
-          </p>
-        </div>
-        <div className="flex flex-col justify-center gap-8 px-1 py-8">
-          {Object.entries(projectsData.current).map(([key, data]) => {
-            return (
-              <img
-                src={data.img}
-                alt={data.img}
-                className="w-24 border select-none shadow"
-                onClick={() => setActiveProject(projectsData.current[key])}
-              />
-            );
-          })}
+      <main className="flex flex-1 flex-col px-12 pb-8 pt-4 justify-center gap-8 max-w-screen-lg mx-auto">
+        <h1 className="text-5xl tracking-wide border-b-2 border-gray-300 border-opacity-30 w-fit px-4 pb-2">
+          Projects
+        </h1>
+        <div className="flex flex-1 gap-6">
+          <div className="flex flex-col gap-2 basis-5/6 py-6 px-16 border border-black/25 shadow items-center bg-gray-800 rounded-md">
+            <h2 className="text-center text-4xl tracking-wider mb-2">
+              {activeProject.title}
+            </h2>
+            <img
+              src={activeProject.img}
+              alt={activeProject.img}
+              className="border border-black/25 rounded-lg shadow h-full max-h-[200px]"
+            />
+            <p className="text-justify my-auto text-base leading-loose">
+              {activeProject.description}
+            </p>
+          </div>
+          <div className="flex flex-col basis-1/6 items-center justify-center gap-8 px-1 py-8">
+            {Object.entries(projectsData.current).map(([key, data]) => {
+              return (
+                <img
+                  src={data.img}
+                  alt={data.img}
+                  className="w-24 border select-none shadow"
+                  onClick={() => setActiveProject(projectsData.current[key])}
+                />
+              );
+            })}
+          </div>
         </div>
       </main>
     )
