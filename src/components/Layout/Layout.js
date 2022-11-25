@@ -4,7 +4,6 @@ import Header from "../Header/Header";
 import {} from "../../themeColors";
 import { ReactComponent as PrevArrow } from "../../assets/arrow prev.svg";
 import { ReactComponent as NextArrow } from "../../assets/arrow next.svg";
-import LinkBadges from "../LinkBadges/LinkBadges";
 
 const pagePaths = ["home", "projects", "about", "contact"];
 
@@ -66,7 +65,6 @@ const NextButton = () => {
 const Layout = ({ children }) => {
   return (
     <>
-      <LinkBadges />
       <div className="h-full flex flex-col">
         <Header />
         <div className="flex flex-1">
