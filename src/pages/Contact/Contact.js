@@ -50,12 +50,6 @@ const Contact = () => {
     return "Send";
   })();
 
-  const buttonClass = (() => {
-    if (isSent) return "sent";
-    if (isSending) return "sending";
-    return "send";
-  })();
-
   return (
     <main className="flex-1 flex flex-col items-center items-center h-full gap-8">
       <h1 className="text-5xl px-6 border-b-2 border-gray-200 border-opacity-30 pb-2 tracking-wide">
