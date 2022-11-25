@@ -1,6 +1,8 @@
 // import "./projects.css";
 
 import { useEffect, useRef, useState } from "react";
+import { ReactComponent as GitHubLink } from "../../assets/github.svg";
+
 const projectList = ["yahtzee", "psb", "posPizza", "weatherApp"];
 
 const Projects = ({ images }) => {
@@ -14,6 +16,7 @@ const Projects = ({ images }) => {
       yahtzee: {
         img: yahtzeeTn,
         title: "Yahtzee",
+        github: "https://github.com/theFlexOne/Yahtzee",
         description: `My fifth and final project for the Flatiron School software engineering bootcamp.
       Combining a React frontend with a Ruby on Rails backend. Written in vanilla CSS and leverages SVGs for game UI
       `,
@@ -21,6 +24,7 @@ const Projects = ({ images }) => {
       posPizza: {
         img: posPizzaTn,
         title: "POS Pizza",
+        github: "https://github.com/theFlexOne/pos-pizza-frontend",
         description: `My second project for the Flatiron School software engineering bootcamp.
         This first app I built using React. It exploits JSON Server to mimic a backend.
         (Full MERN update coming soon!) 
@@ -29,11 +33,13 @@ const Projects = ({ images }) => {
       psb: {
         img: prenticeStreetBarbersTn,
         title: "Prentice Street Barbers",
+        github: "https://github.com/theFlexOne/Project-4-Barber-Shop",
         description: `Details here`,
       },
       weatherApp: {
         img: weatherAppTn,
         title: "Weather App",
+        github: "https://github.com/theFlexOne/weather-app-react",
         description: `Details here`,
       },
     };
@@ -50,9 +56,14 @@ const Projects = ({ images }) => {
         </h1>
         <div className="flex flex-1 gap-6">
           <div className="flex flex-col gap-2 basis-5/6 py-6 px-16 border border-black/25 shadow items-center bg-gray-800 rounded-md">
-            <h2 className="text-center text-4xl tracking-wider mb-2">
-              {activeProject.title}
-            </h2>
+            <div className="flex items-center gap-6">
+              <h2 className="text-center text-4xl tracking-wider mb-2">
+                {activeProject.title}
+              </h2>
+              <a href={activeProject.github} className="h-8 mb-2">
+                <GitHubLink className="h-full" />
+              </a>
+            </div>
             <img
               src={activeProject.img}
               alt={activeProject.img}
